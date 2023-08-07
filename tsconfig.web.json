@@ -1,0 +1,21 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "extends": "./tsconfig.base.json",
+    "include": [
+        "src/renderer/env.d.ts",
+        "src/renderer/**/*",
+        "src/renderer/**/*.tsx",
+        "src/preload/*.d.ts",
+        "src/api/router.ts"
+    ],
+    "exclude": [],
+    "compilerOptions": {
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "composite": true,
+        "jsx": "react-jsx",
+        "baseUrl": ".",
+        "paths": {
+            "@renderer/*": ["src/renderer/src/*"]
+        }
+    }
+}
