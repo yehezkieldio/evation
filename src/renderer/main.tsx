@@ -31,7 +31,13 @@ function HelloElectron() {
         return null;
     }
 
-    return <div data-testid="greeting">{data.text}</div>;
+    return (
+        <div>
+            <div data-testid="greeting" id="greeting">
+                {data.text}
+            </div>
+        </div>
+    );
 }
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

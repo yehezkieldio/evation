@@ -33,6 +33,7 @@
         "@types/node": "^20.4.8",
         "@types/react": "^18.2.18",
         "@types/react-dom": "^18.2.7",
+        "@vitejs/plugin-react": "^4.0.4",
         "electron": "25.4.0",
         "electron-trpc": "^0.5.2",
         "prettier": "^3.0.1",
