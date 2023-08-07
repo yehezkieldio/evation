@@ -5,6 +5,8 @@ import { createTRPCReact } from "@trpc/react-query";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import type { AppRouter } from "../api/router";
 
+import "./main.css";
+
 const trpcReact = createTRPCReact<AppRouter>();
 
 function App() {
@@ -32,7 +34,7 @@ function HelloElectron() {
     }
 
     return (
-        <div>
+        <div className="bg-red-200 p-4 text-black">
             <div data-testid="greeting" id="greeting">
                 {data.text}
             </div>

@@ -15,7 +15,7 @@ function createWindow(): void {
         width: 900,
         height: 670,
         show: false,
-        autoHideMenuBar: true,
+        autoHideMenuBar: false,
         webPreferences: {
             preload: join(__dirname, "../build/preload.js"),
             sandbox: false,
@@ -38,6 +38,8 @@ function createWindow(): void {
     } else {
         mainWindow.loadFile(join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
     }
+
+    mainWindow.webContents.openDevTools();
 }
 
 app.whenReady().then(() => {
