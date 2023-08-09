@@ -94,6 +94,8 @@ typings/
 
 # Electron-Forge
 out/
+dist/
 
 evation.db
 evation.test.db
+.env

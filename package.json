@@ -2,27 +2,28 @@
     "name": "evation",
     "productName": "evation",
     "version": "1.0.0",
-    "description": "",
+    "description": "evation",
     "main": ".vite/build/main.js",
     "scripts": {
         "start": "electron-forge start",
-        "package": "electron-forge package",
-        "make": "electron-forge make",
-        "publish": "electron-forge publish",
-        "electron:rebuild": "electron-rebuild -f -w better-sqlite3"
+        "electron:rebuild": "electron-rebuild -f -w better-sqlite3",
+        "pack": "electron-builder --dir",
+        "dist:linux": "electron-builder --linux AppImage zip",
+        "dist:windows": "electron-builder --windows nsis zip",
+        "postinstall": "electron-builder install-app-deps"
     },
     "author": {
         "name": "yehezkieldio",
         "email": "yehezkieldio@proton.me",
         "url": "https://github.com/elizielx"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/elizielx/evation.git"
+    },
     "license": "MIT",
     "devDependencies": {
         "@electron-forge/cli": "^6.2.1",
-        "@electron-forge/maker-deb": "^6.2.1",
-        "@electron-forge/maker-rpm": "^6.2.1",
-        "@electron-forge/maker-squirrel": "^6.2.1",
-        "@electron-forge/maker-zip": "^6.2.1",
         "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
         "@electron-forge/plugin-vite": "^6.2.1",
         "@electron/rebuild": "^3.2.13",
@@ -36,6 +37,7 @@
         "@vitejs/plugin-react": "^4.0.4",
         "autoprefixer": "^10.4.14",
         "electron": "25.4.0",
+        "electron-builder": "^24.6.3",
         "electron-trpc": "^0.5.2",
         "postcss": "^8.4.27",
         "prettier": "^3.0.1",
@@ -48,5 +50,8 @@
     },
     "dependencies": {
         "electron-squirrel-startup": "^1.0.0"
+    },
+    "build": {
+        "appId": "com.elizielx.evation"
     }
 }
